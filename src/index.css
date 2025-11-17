@@ -93,6 +93,7 @@ All colors MUST be HSL.
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    color: transparent;
     transition: all 0.3s ease;
   }
 
@@ -105,6 +106,7 @@ All colors MUST be HSL.
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    color: transparent;
   }
 
   .glow-box {
@@ -182,6 +184,19 @@ All colors MUST be HSL.
       linear-gradient(hsl(var(--neon-green) / 0.1) 1px, transparent 1px),
       linear-gradient(90deg, hsl(var(--neon-green) / 0.1) 1px, transparent 1px);
     background-size: 50px 50px;
+  }
+
+  /* Dynamic gradient applied via CSS variables set by JS hook */
+  .gradient-dynamic {
+    background: radial-gradient(circle at var(--gx, 50%) var(--gy, 50%), hsl(var(--neon-green-light)), hsl(var(--neon-green)), hsl(var(--neon-green-dark)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: background 0.12s ease;
   }
 }
 
