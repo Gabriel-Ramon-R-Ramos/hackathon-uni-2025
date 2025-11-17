@@ -45,7 +45,7 @@ const CTASection = () => {
       ))}
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
-        <h2 className="text-5xl md:text-7xl font-bold mb-6 glow-text animate-on-scroll">
+        <h2 className="text-5xl md:text-7xl font-bold mb-6 gradient-text-hover animate-on-scroll">
           Pronto para Inovar?
         </h2>
         

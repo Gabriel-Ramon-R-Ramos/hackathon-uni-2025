@@ -47,7 +47,7 @@ const HeroSection = () => {
       {/* Main content */}
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
         <div className="mb-8">
-          <h1 className="text-6xl md:text-8xl font-bold mb-4 glow-text">
+          <h1 className="text-6xl md:text-8xl font-bold mb-4 gradient-text-hover">
             {typedText}
             <span className="inline-block w-1 h-16 md:h-24 bg-primary ml-2 animate-pulse" />
           </h1>
