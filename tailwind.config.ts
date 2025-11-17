@@ -80,10 +80,86 @@ export default {
             height: "0",
           },
         },
+        float: {
+          "0%, 100%": {
+            transform: "translateY(0px) rotate(0deg)",
+          },
+          "50%": {
+            transform: "translateY(-20px) rotate(5deg)",
+          },
+        },
+        pulseGlow: {
+          "0%, 100%": {
+            boxShadow: "0 0 20px hsl(var(--neon-green) / 0.5), 0 0 40px hsl(var(--neon-green) / 0.3)",
+          },
+          "50%": {
+            boxShadow: "0 0 30px hsl(var(--neon-green) / 0.8), 0 0 60px hsl(var(--neon-green) / 0.5), 0 0 90px hsl(var(--neon-green) / 0.3)",
+          },
+        },
+        fadeInUp: {
+          from: {
+            opacity: "0",
+            transform: "translateY(30px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+        fadeIn: {
+          from: {
+            opacity: "0",
+          },
+          to: {
+            opacity: "1",
+          },
+        },
+        scaleIn: {
+          from: {
+            opacity: "0",
+            transform: "scale(0.9)",
+          },
+          to: {
+            opacity: "1",
+            transform: "scale(1)",
+          },
+        },
+        typing: {
+          from: {
+            width: "0",
+          },
+          to: {
+            width: "100%",
+          },
+        },
+        particle: {
+          "0%": {
+            transform: "translateY(0) translateX(0)",
+            opacity: "0",
+          },
+          "10%": {
+            opacity: "1",
+          },
+          "90%": {
+            opacity: "1",
+          },
+          "100%": {
+            transform: "translateY(-100vh) translateX(50px)",
+            opacity: "0",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        float: "float 6s ease-in-out infinite",
+        "float-delayed": "float 6s ease-in-out 2s infinite",
+        "pulse-glow": "pulseGlow 2s ease-in-out infinite",
+        "fade-in-up": "fadeInUp 0.8s ease-out forwards",
+        "fade-in": "fadeIn 1s ease-out forwards",
+        "scale-in": "scaleIn 0.6s ease-out forwards",
+        typing: "typing 3.5s steps(40, end)",
+        particle: "particle 10s linear infinite",
       },
     },
   },
