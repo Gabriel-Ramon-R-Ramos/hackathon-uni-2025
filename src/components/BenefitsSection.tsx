@@ -55,7 +55,7 @@ const BenefitsSection = () => {
       <div className="absolute bottom-20 left-10 w-24 h-24 border border-accent/20 rounded-full float-delayed" />
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 glow-text animate-on-scroll">
+        <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 gradient-text-hover animate-on-scroll">
           Por Que Participar?
         </h2>
         <div className="w-32 h-1 bg-primary mx-auto mb-16 animate-on-scroll" />
@@ -74,7 +74,7 @@ const BenefitsSection = () => {
                 <div className="text-6xl mb-4 transform group-hover:scale-110 transition-transform duration-300">
                   {benefit.icon}
                 </div>
-                <h3 className="text-2xl font-bold mb-3 text-primary group-hover:glow-text transition-all duration-300">
+                <h3 className="text-2xl font-bold mb-3 gradient-text-hover transition-all duration-300">
                   {benefit.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
