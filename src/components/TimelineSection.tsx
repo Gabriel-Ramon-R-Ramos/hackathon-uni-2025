@@ -1,7 +1,9 @@
 import { useEffect, useRef } from "react";
+import { useGradientHover } from "@/hooks/use-gradient-hover";
 
 const TimelineSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const { elementRef, gradientStyle } = useGradientHover();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -54,7 +56,11 @@ const TimelineSection = () => {
       <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary to-transparent hidden md:block" />
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 gradient-text-hover animate-on-scroll">
+        <h2 
+          ref={elementRef}
+          style={gradientStyle}
+          className="text-4xl md:text-6xl font-bold text-center mb-4 animate-on-scroll cursor-default"
+        >
           Etapas do Evento
         </h2>
         <div className="w-32 h-1 bg-primary mx-auto mb-16 animate-on-scroll" />

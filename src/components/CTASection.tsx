@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef } from "react";
+import { useGradientHover } from "@/hooks/use-gradient-hover";
 
 const CTASection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const { elementRef, gradientStyle } = useGradientHover();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -45,7 +47,11 @@ const CTASection = () => {
       ))}
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
-        <h2 className="text-5xl md:text-7xl font-bold mb-6 gradient-text-hover animate-on-scroll">
+        <h2 
+          ref={elementRef}
+          style={gradientStyle}
+          className="text-5xl md:text-7xl font-bold mb-6 animate-on-scroll cursor-default"
+        >
           Pronto para Inovar?
         </h2>
         
