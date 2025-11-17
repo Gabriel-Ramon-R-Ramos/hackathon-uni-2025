@@ -1,7 +1,9 @@
 import { useEffect, useRef } from "react";
+import { useGradientHover } from "@/hooks/use-gradient-hover";
 
 const BenefitsSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const { elementRef, gradientStyle } = useGradientHover();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -55,7 +57,11 @@ const BenefitsSection = () => {
       <div className="absolute bottom-20 left-10 w-24 h-24 border border-accent/20 rounded-full float-delayed" />
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 gradient-text-hover animate-on-scroll">
+        <h2 
+          ref={elementRef}
+          style={gradientStyle}
+          className="text-4xl md:text-6xl font-bold text-center mb-4 animate-on-scroll cursor-default"
+        >
           Por Que Participar?
         </h2>
         <div className="w-32 h-1 bg-primary mx-auto mb-16 animate-on-scroll" />

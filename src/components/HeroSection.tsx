@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
+import { useGradientHover } from "@/hooks/use-gradient-hover";
 
 const HeroSection = () => {
   const [typedText, setTypedText] = useState("");
   const fullText = "Hackathon Universitário 2025";
+  const { elementRef, gradientStyle } = useGradientHover();
 
   useEffect(() => {
     let currentIndex = 0;
@@ -47,7 +49,11 @@ const HeroSection = () => {
       {/* Main content */}
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
         <div className="mb-8">
-          <h1 className="text-6xl md:text-8xl font-bold mb-4 gradient-text-hover">
+          <h1 
+            ref={elementRef}
+            style={gradientStyle}
+            className="text-6xl md:text-8xl font-bold mb-4 cursor-default"
+          >
             {typedText}
             <span className="inline-block w-1 h-16 md:h-24 bg-primary ml-2 animate-pulse" />
           </h1>
