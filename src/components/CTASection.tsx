@@ -1,28 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef } from "react";
 import { useGradientHover } from "@/hooks/use-gradient-hover";
+import { useInView } from "@/hooks/use-inview";
 
 const CTASection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { elementRef, gradientStyle } = useGradientHover();
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("fade-in-up");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elements = sectionRef.current?.querySelectorAll(".animate-on-scroll");
-    elements?.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
+  // Use shared in-view hook for performant reveal animations
+  useInView(sectionRef, { selector: ".animate-on-scroll", className: "fade-in-up", threshold: 0.05, rootMargin: "0px 0px 20% 0px", once: true });
 
   return (
     <section ref={sectionRef} className="py-32 px-4 relative overflow-hidden">
