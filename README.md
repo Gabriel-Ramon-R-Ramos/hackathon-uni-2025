@@ -1,73 +1,60 @@
-# Welcome to your Lovable project
+# Landing page — Hackathon Universitário 2025
 
-## Project info
+Breve descrição
+-----------------
+Esta é a landing page do Hackathon Universitário 2025 — uma página responsiva construída para divulgar o evento, explicar as etapas, benefícios e incentivar inscrições.
 
-**URL**: https://lovable.dev/projects/987f8f86-cfc4-4aae-9990-31751879d4e8
+Seções principais
+-----------------
+- Hero: título chamativo com subtítulo e botão de CTA.
+- About: cards explicando propósito, metodologia, impacto social e inovação (com ícones SVG temáticos).
+- Benefits: vantagens do evento (networking, formação, empregabilidade etc.) com ícones SVG estilizados.
+- Timeline / Etapas: apresentação das fases (Inscrições, Formação de Times, Desenvolvimento, Avaliação) com marcadores visuais.
+- CTA: área para chamada final e link para inscrições.
 
-## How can I edit this code?
+Diferenciais técnicos
+---------------------
+- Frontend: React + TypeScript + Vite
+- Estilos: Tailwind CSS + utilities customizadas em `src/index.css`
+- UI: componentes organizados em `src/components`
+- Comportamento:
+	- `use-gradient-hover` (hook) para gradientes dinâmicos aplicados ao texto (usa CSS vars e background-clip para evitar bloquear o conteúdo).
+	- `use-inview` (hook) para revelar elementos ao rolar a página de forma performática (requestAnimationFrame + unobserve para evitar retriggers).
+- Ícones: SVGs inlined nos componentes para permitir gradientes via `<defs>` e uso de variáveis CSS do tema.
 
-There are several ways of editing your application.
+Como rodar localmente
+---------------------
+1. Instale dependências:
 
-**Use Lovable**
+```powershell
+npm install
+```
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/987f8f86-cfc4-4aae-9990-31751879d4e8) and start prompting.
+2. Inicie o servidor de desenvolvimento:
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```powershell
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+3. Abra o navegador em `http://localhost:5173` (ou a porta indicada pelo Vite).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Notas rápidas para desenvolvedores
+---------------------------------
+- Os componentes estão em `src/components` (Ex.: `HeroSection.tsx`, `AboutSection.tsx`, `BenefitsSection.tsx`, `TimelineSection.tsx`, `CTASection.tsx`).
+- Hooks úteis:
+	- `src/hooks/use-gradient-hover.ts` — controlar gradiente que segue o mouse sobre elementos de texto.
+	- `src/hooks/use-inview.ts` — centraliza a lógica de IntersectionObserver.
+- Estilos globais e utilitários estão em `src/index.css`.
+- Ícones originais estão em `public/icons/` mas muitos foram inlined para permitir gradientes dinâmicos.
 
-**Use GitHub Codespaces**
+Próximos passos sugeridos
+------------------------
+- Validar visual em Chrome e Firefox (especialmente comportamento do gradiente no hover).
+- Opcional: extrair SVGs para componentes reutilizáveis e gerar IDs dinâmicos para `<defs>` se os mesmos SVGs forem usados várias vezes.
+- Escrever um pequeno PR/CHANGELOG descrevendo as mudanças de UI e acessibilidade.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Contato
+-------
+Para dúvidas sobre a implementação, abra uma issue ou PR no repositório.
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/987f8f86-cfc4-4aae-9990-31751879d4e8) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+— Equipe de desenvolvimento
