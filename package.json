@@ -10,9 +10,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://github.com/Gabriel-Ramon-R-Ramos/hackathon-uni-2025",
+  "homepage": "https://Gabriel-Ramon-R-Ramos.github.io/green-spark-hack",
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@radix-ui/react-accordion": "^1.2.11",
