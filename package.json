@@ -12,7 +12,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://Gabriel-Ramon-R-Ramos.github.io/green-spark-hack",
+  "homepage": "https://Gabriel-Ramon-R-Ramos.github.io/hackathon-uni-2025",
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@radix-ui/react-accordion": "^1.2.11",
